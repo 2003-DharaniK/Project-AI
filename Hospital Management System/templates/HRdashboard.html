@@ -1,0 +1,103 @@
+{% extends 'base.html' %} {% block style %} {% endblock style %}
+
+{% block title %}
+<title>HR dashboard</title>
+{% endblock title %}
+<!-- body start -->
+{% block body %}
+<div class="row">
+  <div class="col-md-4 pallet">
+    <section class="bg-info text-center rounded-top">
+      <div class="container">
+        <h5 style="margin-bottom: 0px;">Total Doctor</h5>
+      </div>
+      <!-- /.container-->
+    </section>
+
+    <section class="bg-primary text-center rounded-bottom">
+      <div class="container h2">
+        {{ doctors.count }}
+      </div>
+    </section>
+  </div>
+  <div class="col-md-4 pallet">
+    <section class="bg-info text-center rounded-top">
+      <div class="container">
+        <h5 style="margin-bottom: 0px;">Total Patient</h5>
+      </div>
+      <!-- /.container-->
+    </section>
+
+    <section class="bg-primary text-center rounded-bottom">
+      <div class="container h2">
+        {{ patients }} 
+      </div>
+    </section>
+  </div>
+  <div class="col-md-4 pallet">
+    <section class="bg-info text-center rounded-top">
+      <div class="container">
+        <h5 style="margin-bottom: 0px;">On Duty Doctor</h5>
+      </div>
+      <!-- /.container-->
+    </section>
+
+    <section class="bg-primary text-center rounded-bottom">
+      <div class="container h2">
+        {{ active }}
+      </div>
+    </section>
+  </div>
+</div>
+<div class="col-md-12">
+  <h4>Doctors</h4>
+  <div class="table-dash">
+    <button type="button" class="btn btn-primary">
+      Docotrs
+    </button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Status</th>
+          <th>Department</th>
+          <th>Attendence</th>
+          <th>Salary</th>
+          <th>Update</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for doctor in doctors %}
+        <tr>
+          <td>{{ doctor.person.first_name }} {{ doctor.person.last_name }}</td>
+          <td>{{ doctor.Phone }}</td>
+          <td>{{ doctor.person.email }}</td>
+          <td>{{ doctor.gender }}</td>
+          <td>25</td>
+          {% if doctor.status is 1 %}
+          <td>Active</td>
+          {% else %}
+          <td>Not Active</td>
+          {% endif %}
+          <td>{{ doctor.Department }}</td>
+          <td>{{ doctor.salary }}</td>
+          <td>--</td>
+          <td>
+            <a href="{% url 'profile_update' doctor.id %}"><button type="button" class="btn btn-info">Update</button></a>
+            
+          </td>
+          <td>
+            <a href="{% url 'profile_delete' doctor.id %}"><button type="button" class="btn btn-danger">Delete</button></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock body %}

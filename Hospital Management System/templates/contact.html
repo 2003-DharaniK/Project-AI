@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block style %}
+   <!-- jfhbweufr -->
+  {% endblock style %}
+  {% block title %}
+  <title> Contact</title>
+  {% endblock title %}
+  {% block body %}
+    <div class="container">
+      <div class="col-md-12 map-container">
+        <iframe
+          src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          frameborder="0"
+          style="border: 0;"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <h2>Get in Touch</h2>
+      <div class="row">
+        <div class="col-md-8">
+          <form>
+            <div class="form-group">
+              <textarea
+                rows="10"
+                class="form-control"
+                placeholder="NAME"
+              ></textarea>
+              <div class="row">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Name"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Email" />
+                </div>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Subject"
+              />
+            </div>
+            <button type="button" id="modify-btn" class="btn btn-link">
+              SEND
+            </button>
+          </form>
+        </div>
+        <div class="col-md-4" style="padding: 2.5rem;">
+            <div class="col-md-12 contact-details">
+                <p class="font-weight-bold" style="margin-bottom: 0px;">
+                  <ion-icon name="home-outline"></ion-icon> ButtonWood,
+                  California
+                  <p >Rosemead, CA 91770</p>
+                </p>
+              </div>
+              <div class="col-md-12 contact-details">
+                <p class="font-weight-bold" style="margin-bottom: 0px;">
+                  <ion-icon name="home-outline"></ion-icon> ButtonWood,
+                  California
+                  <p >Rosemead, CA 91770</p>
+                </p>
+              </div>
+              <div class="col-md-12 contact-details">
+                <p class="font-weight-bold" style="margin-bottom: 0px;">
+                  <ion-icon name="home-outline"></ion-icon> ButtonWood,
+                  California
+                  <p >Rosemead, CA 91770</p>
+                </p>
+              </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+{% endblock body %}
