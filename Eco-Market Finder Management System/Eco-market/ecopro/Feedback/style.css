@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url();
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.textup {
+    text-align: center;
+    color: #888;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.fa {
+    margin-right: 5px;
+}

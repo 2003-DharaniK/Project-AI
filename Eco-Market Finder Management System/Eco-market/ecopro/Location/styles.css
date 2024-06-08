@@ -1,0 +1,98 @@
+
+
+
+        .info-window {
+            max-width: 300px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .info-window h2 {
+            margin: 0 0 5px;
+            font-size: 18px;
+        }
+        .info-window p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .info-window img {
+            display: block;
+            margin-top: 10px;
+            border-radius: 5px;
+            width: 100%; /* Set the width to fill the container */
+            height: auto; /* Automatically adjust the height to maintain aspect ratio */
+            max-width: 300px; /* Limit the maximum width to avoid overly large images */
+        }
+
+        .portfolio-img {
+          width: 100%;
+          height: auto;
+      }
+
+      /* CSS code to reduce space between images and footer */
+
+/* Reduce margin between images and footer */
+.shops-container {
+    margin-bottom: 0; /* Adjust the margin as needed */
+}
+
+
+
+
+     
+      /*=============== FOOTER ===============*/
+
+      footer {
+        background-color: hsl(176, 67%, 87%);
+        padding: 20px 0;
+      }
+      
+      .footer-container {
+        display: flex;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .contact-info,
+      .address,
+      .my-account,
+      .payment-gateways {
+        flex: 1;
+        padding: 0 20px;
+      }
+      
+      .contact-info h3,
+      .address h3,
+      .my-account h3,
+      .payment-gateways h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      
+      .contact-info p,
+      .address p {
+        margin: 0;
+      }
+      
+      .my-account ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .my-account li {
+        margin-bottom: 5px;
+      }
+      
+      .my-account li a {
+        text-decoration: none;
+        color: #333;
+      }
+      
+      .payment-gateways img {
+        margin-right: 10px;
+      }
+      

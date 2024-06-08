@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image:url('assets/img/back1.jpg')">
+    <div class="container">
+        <h1>Feedback Form</h1>
+        <form action="send.php" method="POST" onsubmit="return validateForm()">
+            <fieldset>
+                <label for="username">Username:</label><br>
+                <input type="text" class="username" id="username" placeholder="username" name="username" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="text" class="email" id="email" placeholder="Email" name="email" requird><br><br>
+
+                <label for="gender">Gender:</label><br>
+                <select id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select><br><br>
+
+                <label for="service_rating">Rate our service:</label><br>
+                <select id="service_rating" name="service_rating" required>
+                    <option value="5">Excellent</option>
+                    <option value="4">Very Good</option>
+                    <option value="3">Good</option>
+                    <option value="2">Fair</option>
+                    <option value="1">Poor</option>
+                </select><br><br>
+
+                <label for="overall_experience">Overall experience:</label><br>
+                <textarea id="overall_experience" placeholder="Write about your overall experience..." name="overall_experience" required></textarea><br><br>
+
+                <label for="how_did_you_find_us">How did you find us?</label><br>
+                <input type="text" id="how_did_you_find_us" placeholder="How did you find us?" name="how_did_you_find_us" required><br><br>
+
+                <label for="additional_suggestions">Additional suggestions to improve our website:</label><br>
+                <textarea placeholder="Write your suggestions..." id="additional_suggestions" name="additional_suggestions" required></textarea><br><br>
+
+                <input type="submit" value="Submit" class="btn">
+            </fieldset>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
