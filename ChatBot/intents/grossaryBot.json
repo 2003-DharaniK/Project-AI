@@ -1,0 +1,151 @@
+{
+  "id": "0298f270-1bdc-434f-a378-973134163365",
+  "name": "grossaryBot",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "grossaryBot-followup",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "39b937f0-1ebb-4d6f-a2d6-644f7a5e6b4b",
+          "name": "email",
+          "required": true,
+          "dataType": "@sys.email",
+          "value": "$email",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "a9c3ee42-55da-4435-af68-5c877992b0a6",
+          "name": "phone-number",
+          "required": true,
+          "dataType": "@sys.phone-number",
+          "value": "$phone-number",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "may i know your mobile number please ?"
+            },
+            {
+              "lang": "en",
+              "value": "could you please give the contact number"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "19160548-9077-4ccd-b83b-ebf133bef998",
+          "name": "list",
+          "required": true,
+          "dataType": "@list",
+          "value": "$list",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "give the list of the grossary items"
+            },
+            {
+              "lang": "en",
+              "value": "could you give the list of the grossary items"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "2af62eb3-1d77-4100-b1df-bdbdeab6579a",
+          "name": "desserts",
+          "required": true,
+          "dataType": "@desserts",
+          "value": "$desserts",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "what desserts do you need?"
+            },
+            {
+              "lang": "en",
+              "value": "give the desserts name you want"
+            },
+            {
+              "lang": "en",
+              "value": "could you tell the name of the dessert you want"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "b380d9b6-7c3b-4ab8-8e0b-ee0312044520",
+          "name": "date",
+          "required": true,
+          "dataType": "@sys.date",
+          "value": "$date",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "may i know on which date you want to receive the oders"
+            },
+            {
+              "lang": "en",
+              "value": "could you tell at what date you should receive the oders"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "grossary is booked with the $list of grossary items  to the $email and $phone-number at $date .Thank you for your oder. Do you need vegetable cutter?"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

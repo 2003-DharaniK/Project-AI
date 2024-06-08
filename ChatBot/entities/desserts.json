@@ -1,0 +1,9 @@
+{
+  "id": "639f2daa-caf2-4af7-8140-7c28f696cc93",
+  "name": "desserts",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}

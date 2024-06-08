@@ -1,0 +1,44 @@
+[
+  {
+    "value": "today",
+    "synonyms": [
+      "today"
+    ]
+  },
+  {
+    "value": "tomorrow",
+    "synonyms": [
+      "tomorrow"
+    ]
+  },
+  {
+    "value": "The next day",
+    "synonyms": [
+      "The next day"
+    ]
+  },
+  {
+    "value": "The day after tomorrow",
+    "synonyms": [
+      "The day after tomorrow"
+    ]
+  },
+  {
+    "value": "1week later",
+    "synonyms": [
+      "1week later"
+    ]
+  },
+  {
+    "value": "befor 1 week",
+    "synonyms": [
+      "befor 1 week"
+    ]
+  },
+  {
+    "value": "befor a month",
+    "synonyms": [
+      "befor a month"
+    ]
+  }
+]

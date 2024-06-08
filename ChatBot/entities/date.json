@@ -1,0 +1,9 @@
+{
+  "id": "c4b0ade2-d4e4-4c9b-9c99-66622d9d07d1",
+  "name": "date",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}

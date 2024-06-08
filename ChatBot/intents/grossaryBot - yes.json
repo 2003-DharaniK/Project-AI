@@ -1,0 +1,39 @@
+{
+  "id": "4b83402d-d57f-49da-aa55-f5f92d63b896",
+  "parentId": "0298f270-1bdc-434f-a378-973134163365",
+  "rootParentId": "0298f270-1bdc-434f-a378-973134163365",
+  "name": "grossaryBot - yes",
+  "auto": true,
+  "contexts": [
+    "grossaryBot-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "grossaryBot.grossaryBot-yes",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Thank you for odering the grossary items with the vegetable cutter"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

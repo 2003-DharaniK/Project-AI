@@ -1,0 +1,39 @@
+{
+  "id": "77698421-8b28-4acc-8153-0a26ec025425",
+  "parentId": "0298f270-1bdc-434f-a378-973134163365",
+  "rootParentId": "0298f270-1bdc-434f-a378-973134163365",
+  "name": "grossaryBot - no",
+  "auto": true,
+  "contexts": [
+    "grossaryBot-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "grossaryBot.grossaryBot-no",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "okay , Thank you your grossary items is odered for you"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
