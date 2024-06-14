@@ -1,0 +1,692 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    border-radius: border-box;
+}
+body{
+    background:#000;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width:auto;
+    height:650px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/header-image.png);/*This gives the black effect for the overal image it is so important*/
+    
+}
+.container img{
+    padding-top: 25px;
+    padding-left: 150px;
+    width:11%;
+    height:7%;
+    background:none;
+}
+.container nav{
+    position: absolute;
+    top:30px;
+    right:150px;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+}
+.container button {
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    background:rgb(218, 37, 37);
+    color:#fff;
+    cursor: pointer;
+    width: 170px;
+    height: 30px;
+    padding-left:5px;padding-right: 5px;
+    font-size: large;
+}
+
+#eng
+{
+    margin-right: 20px;
+    padding:8px 25px;
+    background: #000;
+    color: #fff;
+    font-size: medium;
+    font-weight: 500;
+    min-width: 150px;
+    border: 1px solid #fff;
+    position:relative;
+}
+
+#eng img{
+    width: 10px;
+    height: 20%;
+    position: absolute;
+    padding: 5px 110px;
+    padding-left:10px;
+
+}
+
+.dropdown
+{
+    position: relative;
+    display: inline-block;
+    margin-left: 50%;
+}
+
+.dropdown-content 
+{
+    display: none;
+    position: absolute;
+    background-color:white;
+    width: 100%;
+    text-align: center;
+
+}
+
+.dropdown-content a
+{
+    color:black;
+    text-decoration: none;
+    padding:5px 5px 2px 5px;
+}
+.dropdown-content a:hover 
+{
+    background-color:blue;
+    width: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*HEADING CSS*/
+.heading {
+    text-align: center;
+    color: #fff;
+    margin-top: 200px; 
+    font-display:center;   
+}
+
+.heading h1 
+{
+    font-size: 45px;
+    line-height:70px;
+    margin-bottom: 20px;
+    font-weight:900;
+}
+.heading h3{
+    font-weight:500;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.heading p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+    word-spacing: 1px;
+}
+.heading input{
+    
+    font-size: 15px;
+    margin-right: 10px;
+    margin-top: 20px;
+    background-color: #000;  
+    border:1px solid white;
+    border-radius: 5px;
+    color: #fff;
+    padding:15px 80px;
+    width:15%;
+    text-align: center;
+ 
+}
+
+.heading button{
+    padding:15px 30px;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border:1px solid red;
+    cursor: pointer;
+    height: 54px;
+    line-height: 1;
+    font-weight: bold;
+    width: 15%;
+}
+.heading img{
+    padding: 1px 5px;
+    width: 10%;
+    height: 90%;
+    vertical-align: middle;
+}
+
+                         /*ENJOY CSS*/
+.enjoy{
+    padding: 50px 12%;
+    font-size: 22px;
+    
+}
+.row{
+    display:flex;
+    width:100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:50px 20px;
+}
+.col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+    
+}
+.col h1{
+    font-size:60px;
+    font-weight: 600;
+}
+.col p{
+    padding-top: 30px;
+    line-height: 1.2;
+}
+
+.tv-img{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.tv-img img{
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+                         /*FEATURE 2 CSS*/
+.feature2{
+    padding: 50px 12%;
+    font-size: 22px;
+    
+}
+.row{
+    display:flex;
+    width:100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:50px 20px;
+}
+.col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+    
+}
+.col h1{
+    font-size:60px;
+    font-weight: 600;
+}
+.col p{
+    padding-top: 30px;
+    line-height: 1.2;
+}
+
+.tv-img{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.tv-img img{
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+
+
+
+                               /*FEATURES 3 CSS*/
+.feature3{
+    padding: 50px 12%;
+    font-size: 22px;
+    
+}
+.row{
+    display:flex;
+    width:100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:50px 20px;
+}
+.col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+    
+}
+.col h1{
+    font-size:40px;
+    font-weight: 600;
+}
+.col p{
+    padding-top: 30px;
+    line-height: 1.2;
+}
+
+.tv-img{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.tv-img img{
+    display: block;
+    width: 90%;
+    margin: auto;
+}                         
+               
+/*FEATURE 4 CSS*/
+
+.feature4{
+    padding: 50px 12%;
+    font-size: 22px;
+    
+}
+.row{
+    display:flex;
+    width:100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:50px 20px;
+}
+.col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+    
+}
+.col h1{
+    font-size:60px;
+    font-weight: 600;
+}
+.col p{
+    padding-top: 30px;
+    line-height: 1.2;
+}
+
+.tv-img{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.tv-img img{
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+
+
+/*FAQ CSS*/
+
+
+.faq
+{
+    padding: 10px 12%;
+    text-align: center;
+    font-size: 18px;
+}
+.faq h2{
+    font-size: 40px;
+    font-weight: 500;
+}
+.que{
+    margin: 60px auto;
+    width:100%;
+    max-width: 750px;
+}
+.que li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.que li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px;
+}
+
+label::after{
+    content: "+";
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transfrom 0.5s;
+}
+
+input[type="checkbox"]
+{
+    display: none;
+}
+
+.que .ans{
+    background-color: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s padding 0.5s;
+}
+
+.ans p{
+    font-size: 25px;
+    line-height: normal;
+    font-weight: 400;
+}
+.que input[type="checkbox"]:checked + label +.ans{
+    max-height: 600px;
+    padding: 30px 20px;
+}
+
+.que input[type="checkbox"]:checked + label::after{
+    transform: rotate(135deg);
+}
+ 
+.email p{
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.signup input{
+    text-align:left;
+    width: 35%;
+    font-size: medium;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #303030;
+    color: #000;
+    padding-left: 10px;
+    margin: 10px 5px 50px 29%;
+
+}
+
+.signup button{
+       text-align: center;
+       width:10%;
+       height: 46px;
+       background-color: red;
+       color: #fff;
+       border-radius: 5px;
+       margin-right: 150px;
+       font-size: large;
+       padding-left: 10px;
+       margin-top: 10px;
+       
+
+}
+.signup img{
+    width: 20px;
+    height: 20px;
+}
+
+/*FOOTER CSS*/
+
+.footer
+{
+    background-color: #000;
+    color: #fff;
+    width: 50%;
+    height:200px;
+    margin:20px 0 15px 0;
+    padding-left: 20%;
+    line-height: 2;
+    padding-inline-end: 2px;
+   
+}
+
+table {
+    font-family: arial, sans-serif;
+    border: 3px;
+    width: 100%;
+  }
+  
+.footer td {
+   text-align:start;
+
+}
+
+.hr{
+     color:#303030;
+     margin-bottom: 20px;
+}
+/*RESPONSIVE CSS*/
+
+@media screen and (max-width:600px) 
+{
+
+    .container img
+    {
+        padding-top: 20px;
+        padding-left:2px;
+        width:20%;
+        height:4%;
+        background:none;
+        padding-left: 10%;
+
+    }
+    .heading h1 
+    {
+    font-size: 30px;
+    line-height:normal;
+    margin-bottom: 20px;
+    font-weight: 700;
+    padding-left: 5px;
+    margin-top: 10px;
+    padding-top:0%;
+    margin-right: 40px;
+    
+    }
+    .heading h3
+    {
+    font-weight:500;
+    margin-top: 5px;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right:20px;
+    margin-right: 20px;
+    
+   }
+
+   .heading p 
+   {
+    font-size: 23px;
+    font-weight: 500;
+    margin-top: 10px;
+    word-spacing: 1px;
+    line-height: normal;
+    text-align:center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 2%;
+    margin-right: 30px;
+   }
+
+   .container button 
+   {
+    padding: 3px 10px;
+    width:20%;
+    height: fit-content;
+    border: none;
+    border-radius: 5px;
+    background:rgb(218, 37, 37);
+    color:#fff;
+    font-weight:700;
+    font-size:large;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 20px;
+    
+   }
+
+   .container #eng
+    {
+    margin-left:50px;
+    margin-right: 50px;
+    padding:8px 10px;
+    background: #000;
+    color: #fff;
+    font-size: medium;
+    font-weight: 500;
+    min-width: 100px;
+    border: 1px solid #fff;
+    position:relative;
+    box-sizing: content-box;
+   }
+
+   .heading input{
+    
+    font-size: 15px;
+    margin-right: 5px;
+    margin-top: 20px;
+    background-color: #000;  
+    border:1px solid white;
+    border-radius: 5px;
+    color: #fff;
+    padding:15px 10%;
+    width:50%;
+    text-align:left;
+ 
+    }
+
+    .heading button
+    {
+        padding:10px 10px;
+        font-size: 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        border:1px solid red;
+        cursor: pointer;
+        line-height:normal;
+        font-weight: bold;
+        width: 50%;
+        height:40px;
+
+    }
+
+    .row {
+        flex-direction: column-reverse;
+        padding: 20px 10px; 
+    }
+    .col h1 {
+        font-size: 30px;
+        text-align: center; 
+        margin-right: 50px;
+
+    }
+    .col p {
+        text-align: center;
+        padding-top: 20px;
+        line-height: normal;
+        font-size: 20px;
+        margin-right: 40px;
+    }
+    .tv-img img{
+               order: 1; 
+               padding-top: 20px; 
+               margin-right: 70px; 
+    }
+    .col, .tv-img {
+        flex-basis: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .col{
+        order: 1;
+    }
+
+    .faq h2{
+        font-size: 35px;
+        font-weight: 500;
+        margin-right: 20px;
+    }
+    .que li label{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        font-size: 15px;
+        font-weight: 500;
+        background: #303030;
+        margin-bottom: 2px;
+        cursor: pointer;
+        position: relative;
+        margin-right: 30px;
+    }
+    .ans p{
+        font-size: 15px;
+        line-height: normal;
+        font-weight: 400;
+    }
+    .que .ans{
+        background-color: #303030;
+        text-align: left;
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s padding 0.5s;
+        margin-right: 35px;
+    }
+    .email p{
+        font-size: 15px;
+        text-align:center;
+        padding-bottom: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .signup input{
+        text-align:left;
+        width: 40%;
+        font-size: medium;
+        height: 20px;
+        border-radius: 5px;
+        background-color: #303030;
+        color: #000;
+        padding-left: 10px;
+        margin-left:30px;
+    
+    }
+    .signup button
+    {
+        text-align: center;
+        width:30%;
+        height: 30px;
+        background-color: red;
+        color: #fff;
+        border-radius: 5px;
+        margin-right: 20px;
+        font-size: smaller;
+        padding-left: 10px;
+        margin-top: 20px;
+    }
+    .footer td 
+    {
+        font-size: smaller;
+        padding-bottom: 10px;
+        padding-right: 3px;
+        padding-left: 3px;
+    }
+     .footer
+     {
+    background-color: #000;
+    color: #fff;
+    width: 50%;
+    height:200px;
+    margin:20px 0 15px 0;
+    padding-left: 10%;
+    line-height: 2;
+    margin-bottom: 150px;
+   
+} 
+.footer h4{
+    font-size: 15px;
+}
+
+    
+}
