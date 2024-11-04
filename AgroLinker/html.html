@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Role - AgroLinker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(bg.jpg);
+    
+}
+
+.container {
+    text-align: center;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+h1 {
+    color: #3d5a40;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card img {
+    width: 96px;
+    height: 96px;
+}
+
+.card h3 {
+    margin-top: 20px;
+    color: #2c5f2d;
+    font-size: 1.5rem;
+}
+
+.card p {
+    color: #6c757d;
+    margin: 10px 0;
+}
+
+.card a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.card a.button:hover {
+    background-color: #45a049;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+    </style>
+</head>
+<body>
+    
+    
+    <div class="container">
+        <h1>Select Your Role in AgroLinker</h1>
+        <div class="card-container">
+            <!-- Admin Card -->
+            <div class="card">
+                <img src="https://img.icons8.com/color/96/admin-settings-male.png" alt="Admin Icon">
+                <h3>Admin</h3>
+                <p>Manage all operations and users</p>
+                <a href="adminlogin.php" class="button">Login as Admin</a>
+            </div>
+
+            <!-- Farmer Card -->
+            <div class="card">
+                <img src="https://img.icons8.com/color/96/farmer-male.png" alt="Farmer Icon">
+                <h3>Farmer</h3>
+                <p>Manage and sell your agricultural products</p>
+                <a href="connect.html" class="button">Login as Farmer</a>
+            </div>
+
+            <!-- Industry Card -->
+            <div class="card">
+                <img src="https://img.icons8.com/color/96/factory.png" alt="Industry Icon">
+                <h3>Industry</h3>
+                <p>Purchase agricultural products for industry needs</p>
+                <a href="customer/login.php" class="button">Login as Industry</a>
+            </div>
+
+            <!-- EB Officer Card -->
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/96/city-hall.png" alt="EB Officer Icon">
+                <h3>EB Officer</h3>
+                <p>Oversee operations and compliance</p>
+                <a href="officer.php" class="button">Login as EB Officer</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

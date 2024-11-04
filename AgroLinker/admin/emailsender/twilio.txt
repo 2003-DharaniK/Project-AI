@@ -1,0 +1,26 @@
+/*const accountSid = '';
+const authToken = '[AuthToken]';
+const client = require('twilio')(accountSid, authToken);
+
+client.messages
+    .create({
+        body: 'Hello [Applicant's Name],
+
+We are excited to inform you that you have been selected for the Manager role at AgroLinker. Please confirm your acceptance by replying to this message or contact us on the website for further details.
+
+Looking forward to hearing from you!
+
+Best regards,
+Dharani,
+Agrolinker
+',
+        from: '',
+        to: ''
+    })
+    .then(message => console.log(message.sid))
+    .done();
+*/
+
+
+
+   

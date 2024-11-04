@@ -1,0 +1,31 @@
+/*const twilio = require('twilio');
+
+// Your Twilio credentials
+const accountSid = ''; // Replace with actual Account SID
+const authToken = ''; // Replace with your Auth Token
+const client = new twilio(accountSid, authToken);
+
+// Function to send SMS
+const sendSMS = (to, message) => {
+    client.messages.create({
+        body: message, // SMS content
+        from: '', // Replace with your Twilio number
+        to:  ''// Recipient's phone number
+    })
+    .then(message => console.log(`Message sent: ${message.sid}`))
+    .catch(error => console.error('Error sending message:', error));
+};
+
+// Message body
+const smsMessage = `Hello [Applicant's Name],
+
+We are excited to inform you that you have been selected for the Manager role at AgroLinker. Please confirm your acceptance by replying to this message or contact us on the website for further details.
+
+Looking forward to hearing from you!
+
+Best regards,
+Dharani,
+Agrolinker`;
+
+// Call the function to send an SMS
+sendSMS('+9+6380436090', smsMessage); // Replace with the recipient's number */

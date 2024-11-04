@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroLinker Admin Panel</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!---jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    
+    <!-- Custom CSS -->
+    <style>
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #343a40;
+            padding-top: 20px;
+            position: fixed;
+        }
+
+        .sidebar h2 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+            color: #ffffff;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu-item i {
+            margin-right: 10px;
+        }
+
+        .menu-item:hover {
+            background-color: #495057;
+            transform: translateX(10px);
+        }
+
+        .dashboard-content {
+            margin-left: 260px;
+            padding: 40px;
+        }
+
+        .page-title {
+            font-size: 24px;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 30%;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <div class="menu-item" onclick="loadContent('dashboard')">
+            <i class="fas fa-home"></i> Dashboard
+        </div>
+        <div class="menu-item" onclick="loadContent('products')">
+            <i class="fas fa-shopping-basket"></i> Products
+        </div>
+        <div class="menu-item" onclick="window.location.href='analytics.php'">
+            <i class="fas fa-chart-bar"></i> Analytics
+        </div>
+        <div class="menu-item" onclick="loadContent('farmers')">
+            <i class="fas fa-users"></i> Farmers
+        </div>
+        <div class="menu-item" onclick="loadContent('workers')">
+            <i class="fas fa-users-cog"></i> Workers
+        </div>
+        <div class="menu-item" onclick="loadContent('settings')">
+            <i class="fas fa-cogs"></i> Settings
+        </div>
+        <div class="menu-item" onclick="window.location.href='fetchofficer.php'">
+            <i class="fas fa-cogs"></i> Electricity Availability
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="dashboard-content" id="main-content">
+        <h2 class="page-title">Welcome to the Admin Panel</h2>
+        <p>Select a menu item to view details.</p>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        function loadContent(page) {
+            let content = '';
+            switch(page) {
+                case 'workers':
+                    content = `<h2 class="page-title">Workers Overview</h2>
+                    <div class="table-container">
+                        <h4>Manager Applicants</h4>
+                        <table class="table table-hover" id="manager-table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone No</th>
+                                    <th scope="col">Experience</th>
+                                    <th scope="col">Resume</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="manager-table-body">
+                            </tbody>
+                        </table>
+                        <h4>Worker Applicants</h4>
+                        <table class="table table-hover" id="worker-table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone No</th>
+                                    <th scope="col">Experience</th>
+                                    <th scope="col">Resume</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="worker-table-body">
+                            </tbody>
+                        </table>
+                        <h4>CA Applicants</h4>
+                        <table class="table table-hover" id="ca-table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone No</th>
+                                    <th scope="col">Experience</th>
+                                    <th scope="col">Resume</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ca-table-body">
+                            </tbody>
+                        </table>
+                    </div>`;
+                    document.getElementById('main-content').innerHTML = content;
+                    fetchWorkers();
+                    break;
+
+                    case 'farmers':
+    content = `<h2 class="page-title">Farmers Overview</h2>
+    <div class="table-container">
+        <h4>Banana Products</h4>
+        <table class="table table-hover" id="banana-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Farmer Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="banana-table-body">
+            </tbody>
+        </table>
+        <h4>Coconut Products</h4>
+        <table class="table table-hover" id="coconut-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Farmer Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="coconut-table-body">
+            </tbody>
+        </table>
+        <h4>Paddy Products</h4>
+        <table class="table table-hover" id="paddy-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Farmer Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                   
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="paddy-table-body">
+            </tbody>
+        </table>
+        <h4>Cotton Products</h4>
+        <table class="table table-hover" id="cotton-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Farmer Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="cotton-table-body">
+            </tbody>
+        </table>
+        <h4>Palm Products</h4>
+        <table class="table table-hover" id="palm-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Farmer Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="Palm-table-body">
+            </tbody>
+        </table>
+        <h4>Sugarcane Products</h4>
+        <table class="table table-hover" id="sugarcane-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Farmer Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="sugarcane-table-body">
+            </tbody>
+        </table>
+        <!-- Add more tables for other product types as needed -->
+    </div>`;
+    document.getElementById('main-content').innerHTML = content;
+    fetchFarmers(); // Call the function to fetch farmers' products
+    break;
+
+
+
+
+
+    case 'dashboard':
+    content = `<h2 class="page-title">Dashboard Overview</h2>
+    <div class="card-container">
+        <div class="card">
+            <h5>Total Managers: <span id="total-managers">0</span></h5>
+        </div>
+        <div class="card">
+            <h5>Total Workers: <span id="total-workers">0</span></h5>
+        </div>
+        <div class="card">
+            <h5>Total CAs: <span id="total-CAs">0</span></h5>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <h5>Total Farmers: <span id="total-farmers">0</span></h5>
+        </div>
+        <div class="card">
+            <h5>Total Products: <span id="total-products">0</span></h5>
+        </div>
+    </div>
+    <p>Select a menu item to view details.</p>`;
+    
+    document.getElementById('main-content').innerHTML = content;
+    fetchWorkerCounts();
+    fetchFarmersAndProductsCounts(); // Call this function to get the counts
+    break;
+
+
+
+                case 'settings':
+                    content = `<h2 class="page-title">Settings</h2>
+                    <div class="table-container">
+                        <form id="settings-form">
+                            <div class="form-group">
+                                <label for="adminName">Admin Name</label>
+                                <input type="text" class="form-control" id="adminName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adminEmail">Email</label>
+                                <input type="email" class="form-control" id="adminEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adminPassword">Password</label>
+                                <input type="password" class="form-control" id="adminPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>`;
+                    document.getElementById('main-content').innerHTML = content;
+                    break;
+
+                             
+
+                default:
+                    content = `<h2 class="page-title">Welcome to the Admin Panel</h2><p>Select a menu item to view details.</p>`;
+                    document.getElementById('main-content').innerHTML = content;
+            }
+        }            
+        
+        function addFarmerRow(productName, farmer) {
+    return `<tr id="farmer-row-${farmer.id}"> <!-- Unique row ID -->
+                <td>${farmer.id}</td>
+                <td>${farmer.farmer_name}</td>
+                <td>${farmer.quantity}</td>
+                <td>${farmer.price}</td>
+                <td><img src="${farmer.product_image}" alt="${farmer.product_name}" style="width: 50px; height: auto;"></td>
+                <td>
+                    <button class="btn btn-success btn-sm" onclick="purchaseFarmer('${farmer.id}', '${productName}', '${farmer.quantity}', '${farmer.price}')">Purchase</button>
+                    <button class="btn btn-danger btn-sm" onclick="denyFarmer('${farmer.id}')">Deny</button>
+                </td>
+            </tr>`;
+}
+
+function purchaseFarmer(farmerId, productName, quantity, price) {
+    // Set the product details in the modal
+    document.getElementById('modalFarmerId').innerText = farmerId;
+    document.getElementById('modalProductName').innerText = productName;
+    document.getElementById('modalQuantity').innerText = quantity;
+    document.getElementById('modalPrice').innerText = price;
+
+    // Make an AJAX request to get farmer's payment details
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'getPaymentDetails.php?farmerId=' + farmerId, true);
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            try {
+                var response = JSON.parse(xhr.responseText);
+
+                if (response.status === 'success') {
+                    // Set the bank and payment details in the modal
+                    document.getElementById('modalIfsc').innerText = response.paymentDetails.ifsc_code;
+                    document.getElementById('modalBankName').innerText = response.paymentDetails.bank_name;
+                    document.getElementById('modalBranchName').innerText = response.paymentDetails.branch_name;
+                    document.getElementById('modalAccountNumber').innerText = response.paymentDetails.account_number;
+                    document.getElementById('modalMobileNumber').innerText = response.paymentDetails.mobile_number;  // Add mobile number
+                    document.getElementById('modalUpiId').innerText = response.paymentDetails.upi_id;  // Add UPI ID
+                } else {
+                    alert(response.message); // Show error message from the PHP response
+                }
+            } catch (e) {
+                console.error('Error parsing JSON response:', e);
+                alert('Invalid JSON response received.');
+            }
+        } else {
+            alert('Error fetching farmer payment details');
+        }
+    };
+    xhr.onerror = function() {
+        alert('Request error. Please check your connection.');
+    };
+    xhr.send();
+
+    // Show the modal
+    $('#purchaseModal').modal('show');
+}
+
+/*-------delete deny */
+
+function denyFarmer(farmerId) {
+    
+    if (confirm("Are you sure you want to deny this farmer's product?")) {
+        console.log('Denying farmer with ID:', farmerId); // Debugging line
+        // Make an AJAX call to delete the farmer's product from the database
+        fetch(`deleteFarmer.php?farmerId=${farmerId}`, {
+            method: 'GET'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log('Server response:', data); // Log the server response
+            if (data.trim() === 'success') {
+                alert('Farmer product denied and deleted successfully.');
+                // Remove the row if the response is successful
+                const row = document.getElementById(`farmer-row-${farmerId}`);
+                if (row) {
+                    row.remove();  // Remove the row from the table
+                } else {
+                    console.error('Row not found!');
+                }
+            } else {
+                alert('Error in denying the farmer product: ' + data);
+            }
+        })
+        .catch(error => {
+            console.error('AJAX error:', error);
+            alert('Error in denying the farmer product.');
+        });
+    }
+}
+    
+
+
+function fetchFarmers() {
+    fetch('fetch_farmers.php')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            let bananaRows = '';
+            let coconutRows = '';
+            let paddyRows = '';
+            let cottonRows = '';
+            let palmRows = '';
+            let sugarcaneRows = '';
+            data.forEach(farmer => {
+                if (farmer.product_name === 'Banana') {
+                    bananaRows += addFarmerRow('Banana', farmer);
+                } else if (farmer.product_name === 'Coconut') {
+                    coconutRows += addFarmerRow('Coconut', farmer);
+                } else if (farmer.product_name === 'Paddy') {
+                    paddyRows += addFarmerRow('Paddy', farmer);
+                } else if (farmer.product_name === 'Cotton') {
+                    cottonRows += addFarmerRow('Cotton', farmer);
+                } else if (farmer.product_name === 'Palm') {
+                    palmRows += addFarmerRow('Palm', farmer);
+                } else if (farmer.product_name === 'Sugarcane') {
+                    sugarcaneRows += addFarmerRow('Sugarcane', farmer);
+                }
+            });
+
+            document.getElementById('banana-table-body').innerHTML = bananaRows;
+            document.getElementById('coconut-table-body').innerHTML = coconutRows;
+            document.getElementById('paddy-table-body').innerHTML = paddyRows;
+            document.getElementById('cotton-table-body').innerHTML = cottonRows;
+            document.getElementById('Palm-table-body').innerHTML = palmRows;
+            document.getElementById('sugarcane-table-body').innerHTML = sugarcaneRows;
+        })
+        .catch(error => console.error('Error fetching farmers:', error));
+}
+
+
+function viewFarmer(id) {
+    alert('Viewing details for farmer with ID: ' + id);
+}
+
+function fetchFarmersAndProductsCounts() {
+    fetch('fetch_counts.php')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); // Log the data to check the response
+            if (data && data.totalFarmers !== undefined && data.totalProducts !== undefined) {
+                // If data is present, update the counts
+                document.getElementById('total-farmers').innerText = data.totalFarmers;
+                document.getElementById('total-products').innerText = data.totalProducts;
+            } else {
+                console.error('No valid data returned from the server');
+            }
+        })
+        .catch(error => console.error('Error fetching farmers and products counts:', error));
+}
+
+
+
+        function fetchWorkers() {
+            fetch('fetch_workers.php') // Make sure to create this PHP file to fetch workers data from your database
+                .then(response => response.json())
+                .then(data => {
+                    let managerRows = '';
+                    let workerRows = '';
+                    let caRows = '';
+                    data.forEach(worker => {
+                        if (worker.position === 'Manager') {
+                            managerRows += `<tr>
+                                <td>${worker.id}</td>
+                                <td>${worker.full_name}</td>
+                                <td>${worker.email}</td>
+                                <td>${worker.phone_no}</td>
+                                <td>${worker.experience}</td>
+                                <td><a href="${worker.resume}" target="_blank">View Resume</a></td>
+                                <td><button class='btn btn-primary btn-sm' onclick='hireWorker(${worker.id})'>Hire</button></td>
+                            </tr>`;
+                        } else if (worker.position === 'Worker') {
+                            workerRows += `<tr>
+                                <td>${worker.id}</td>
+                                <td>${worker.full_name}</td>
+                                <td>${worker.email}</td>
+                                <td>${worker.phone_no}</td>
+                                <td>${worker.experience}</td>
+                                <td><a href="${worker.resume}" target="_blank">View Resume</a></td>
+                                <td><button class='btn btn-primary btn-sm' onclick='hireWorker(${worker.id})'>Hire</button></td>
+                            </tr>`;
+                        } else if (worker.position === 'CA') {
+                            caRows += `<tr>
+                                <td>${worker.id}</td>
+                                <td>${worker.full_name}</td>
+                                <td>${worker.email}</td>
+                                <td>${worker.phone_no}</td>
+                                <td>${worker.experience}</td>
+                                <td><a href="${worker.resume}" target="_blank">View Resume</a></td>
+                                <td><button class='btn btn-primary btn-sm' onclick='hireWorker(${worker.id})'>Hire</button></td>
+                            </tr>`;
+                        }
+                    });
+
+                    document.getElementById('manager-table-body').innerHTML = managerRows;
+                    document.getElementById('worker-table-body').innerHTML = workerRows;
+                    document.getElementById('ca-table-body').innerHTML = caRows;
+                })
+                .catch(error => console.error('Error fetching workers:', error));
+        }
+
+        function fetchWorkerCounts() {
+            fetch('fetch_worker_counts.php') // Create this PHP file to get the counts of workers from your database
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('total-managers').innerText = data.totalManagers;
+                    document.getElementById('total-workers').innerText = data.totalWorkers;
+                    document.getElementById('total-CAs').innerText = data.totalCAs;
+                })
+                .catch(error => console.error('Error fetching worker counts:', error));
+        }
+
+
+       /*--------------hireworker--------*/
+/*let selectedWorker = {};  // Global variable to store the selected worker's details
+
+function hireWorker(workerId) {
+    // Fetch the worker details from the list based on workerId
+    fetch('fetch_workers.php')  // Adjust the backend URL as per your setup
+        .then(response => response.json())
+        .then(data => {
+            const worker = data.find(w => w.id === workerId);
+            selectedWorker = worker; // Store worker details globally
+
+            // Set the worker's details in the modal
+            document.getElementById('hireMessage').innerHTML = `
+                Are you sure you want to hire ${worker.full_name} for the ${worker.position} position?`;
+
+            // Open the modal
+            $('#hireModal').modal('show');
+        })
+        .catch(error => console.error('Error fetching worker details:', error));
+}*/
+
+let selectedWorker = {};
+
+// Define the onSelectWorker function
+function onSelectWorker(worker) {
+    selectedWorker = worker; // Set the selected worker
+    console.log('Selected Worker:', selectedWorker); // Optional: Log the selected worker for debugging
+} // Global variable to store the selected worker's details
+
+function hireWorker(workerId) {
+    console.log("Hiring Worker ID:", workerId); // Log the worker ID being passed
+
+    fetch('fetch_workers.php')  
+        .then(response => response.json())
+        .then(data => {
+            console.log("Fetched Workers Data:", data); // Log the entire response for debugging
+
+            // Log the types of workerId and fetched worker IDs
+            console.log("Type of workerId:", typeof workerId);
+
+            const worker = data.find(w => {
+                console.log("Type of fetched worker ID:", typeof w.id); // Log type of each fetched worker ID
+                return w.id === String(workerId); // Ensure the comparison is done as strings
+            });
+
+            if (worker) {
+                selectedWorker = worker; // Store worker details globally
+
+                // Set the worker's details in the modal
+                document.getElementById('hireMessage').innerHTML = `
+                    Are you sure you want to hire ${worker.full_name} for the ${worker.position} position?`;
+
+                // Open the modal
+                $('#hireModal').modal('show');
+            } else {
+                console.error(`Worker with ID ${workerId} not found.`);
+            }
+        })
+        .catch(error => console.error('Error fetching worker details:', error));
+}
+
+
+
+
+
+// Sending SMS function
+function sendSms() {
+    const message = `Hello ${selectedWorker.full_name},
+    We are excited to inform you that you have been selected for the ${selectedWorker.position} role at AgroLinker. 
+    Please confirm your acceptance by replying to this message or contact us on the website for further details. 
+    Best regards, AgroLinker`;
+
+
+    const phoneNumber = `+91${selectedWorker.phone_no}`; // Make sure to prepend the country code
+    console.log('Sending SMS to:', `+91${selectedWorker.phone_no}`);
+
+    // AJAX call to the backend server
+    fetch('http://localhost:3000/sendSMS', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            phoneNumber: `+91${selectedWorker.phone_no}`, // Make sure to prepend the country code
+            smsMessage: message
+        })
+    })
+    .then(response => {
+        console.log('Response Status:', response.status); // Log status code
+        return response.text(); // or response.json() if your server returns JSON
+    })
+    .then(data => {
+        console.log('Response Data:', data); // Log the success message from the server
+        alert('SMS Sent Successfully');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to send SMS');
+    });
+}
+
+
+    </script>
+
+
+<!-- Hire Confirmation Modal -->
+<!-- Hire Confirmation Modal -->
+<div class="modal fade" id="hireModal" tabindex="-1" role="dialog" aria-labelledby="hireModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="hireModalLabel">Hire Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="hireMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="sendSms()">Send SMS</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---poup modal for payement -->
+<!-- Modal for Purchase -->
+<div class="modal fade" id="purchaseModal" tabindex="-1" role="dialog" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="purchaseModalLabel">Purchase Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Product Name: <span id="modalProductName"></span></p>
+                <p>Quantity: <span id="modalQuantity"></span></p>
+                <p>Farmer ID: <span id="modalFarmerId"></span></p>
+                <p>Price: <span id="modalPrice"></span></p>
+
+                <!-- Bank Details Section -->
+                <p>IFSC Code: <span id="modalIfsc"></span></p>
+                <p>Bank Name: <span id="modalBankName"></span></p>
+                <p>Branch Name: <span id="modalBranchName"></span></p>
+                <p>Account Number: <span id="modalAccountNumber"></span></p>
+                <p>Mobile Number: <span id="modalMobileNumber"></span></p> <!-- Added Mobile Number -->
+                <p>UPI ID: <span id="modalUpiId"></span></p> <!-- Added UPI ID -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Proceed to Payment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+  
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - AgroLinker</title>
+    <link rel="stylesheet" href="styles.css">
+    <!---boostrap css-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@3.5.0/css/flag-icons.min.css">
+    <!--boostrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!---footer css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!--ajax-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 100%;
+
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .product-container {
+            display: flex;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            gap:10px;
+            
+        }
+
+        .product-images {
+            flex: 1;
+            padding: 20px;
+            
+        }
+
+        .main-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail-images {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .thumbnail {
+            width: 30%;
+            cursor: pointer;
+            border-radius: 4px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-details {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .product-details h2 {
+            margin: 0;
+            font-size: 2rem;
+            color: #4CAF50;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #FF5722;
+            margin: 10px 0;
+        }
+
+        .discount-card {
+            display: inline-block;
+            background-color: #e0f7fa;
+            border: 1px solid #b2ebf2;
+            border-radius: 5px;
+            padding: 10px;
+            margin-left: 10px;
+            font-size: 1rem;
+            color: #00695c;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        .order-button {
+            background-color: #FF9900;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .order-button:hover {
+            background-color: #e68a00;
+        }
+/*---------addditional information --------*/
+.additional-info h3 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px;
+}
+
+.info-row {
+    display: flex; /* Flexbox to arrange items in a row */
+    justify-content: space-around; /* Evenly space out the items */
+    align-items: center; /* Vertically align the items */
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column; /* Icon above text */
+    align-items: center; /* Center align both icon and text */
+    margin: 10px; /* Space between each info item */
+}
+
+.info-item i {
+    font-size: 2.5em; /* Medium-sized icons */
+    color: #B1AFFF; /* Icon color */
+    margin-bottom: 5px; /* Space between icon and text */
+}
+
+.info-item p {
+    font-size: 1em; /* Text size */
+    color: #333; /* Text color */
+    margin: 0; /* Remove default margins */
+}
+
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            position: relative;
+            width: 100%;
+        }
+
+        /* Styles for ratings */
+        .ratings {
+            display: flex;
+            align-items: center;
+        }
+
+        .rating {
+            color: #FFBF00;
+            margin-right: 10px;
+        }
+
+        .reviews-count {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+ /* Offers section styles */
+.offers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Create small cards */
+    gap: 20px; /* Space between cards */
+    margin: 20px 0;
+}
+
+.offer {
+    /*background-color: #f8f4e3; /* Light color for cards */
+    border: 1px solid #7b38b9;
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 150px; /* Keeps the card square */
+    text-align: center; /* Center the content */
+}
+
+.offer-heading {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2e6f8d; /* Green color for headings */
+    margin-bottom: 8px;
+}
+
+.offer p {
+    font-size: 0.85em;
+    color: #4a4a4a;
+}
+.blink {
+    animation:blink-animation 1s steps(2, start) infinite;
+    font-size: 40px;
+    color: red;
+    font-weight:bolder;
+}
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* Hover effect */
+.offer:hover {
+    background-color: #ecead0;
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .offers {
+        grid-template-columns: 1fr 1fr; /* Two cards per row for smaller screens */
+    }
+}
+
+
+/* Adding hover effect for interactivity */
+.offer:hover {
+    background-color: #ecead0; /* Slight background change on hover */
+    transform: translateY(-5px); /* Smooth lift effect */
+    transition: 0.3s ease;
+}
+
+
+        /* Grade highlighting */
+        .grade {
+            background-color: #ffeb3b;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+            }
+
+            .thumbnail {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+.breadcrumb {
+    background-color: #d9e3ee; 
+    height: 50px;
+    border-radius: 5px; 
+    margin: 20px 0; 
+    margin-top: 120px;
+    
+}
+
+.breadcrumb__list {
+    list-style: none;
+    display: flex; 
+    align-items: center;
+    font-size: 16px; 
+    color: #333; 
+    margin-top: -1px;
+    gap:10px;
+}
+
+.breadcrumb__link {
+    text-decoration: none; 
+    color: #0c243d; 
+   transition: color 0.3s; 
+   font-size: 1.2rem;
+   
+}
+
+.breadcrumb__link:hover {
+    color: #0056b3; 
+}
+
+.breadcrumb__separator {
+    margin: 0 5px; 
+    color: #999; 
+}
+
+.breadcrumb__current {
+    font-weight: bold; 
+    color: #333; 
+}
+
+
+/*-----related projects-----*/
+
+.product__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px; /* Reduce the gap */
+    padding: 20px;
+    margin-top: 190px;
+    max-width: 1200px; /* Limit the width to control spacing */
+    margin-left: auto; /* Center the container */
+    margin-right: auto;
+    
+}
+.product__item {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    position: relative;
+    width: 550px; /* Set a fixed width */
+    max-width: 100%; /* Ensure it fits within the container */
+    height: auto; /* Adjust height accordingly */
+    margin-bottom: 50px;
+}
+
+.product__item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product__banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.product__img {
+    width: 100%;
+    height: 200px; /* Control image height */
+    object-fit: cover; /* Ensure images are properly cropped */
+}
+
+.product__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.product__img.hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.product__banner:hover .product__img.hover {
+    opacity: 1;
+}
+
+.product__actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+
+.action__btn {
+    text-decoration: none; /* Remove underline */
+    color: #000; /* Change text color */
+    background-color: #f0f0f0; /* Button background color */
+    padding: 5px 10px; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.action__btn:hover {
+    background-color: #e0e0e0; /* Change background color on hover */
+}
+
+.product__badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /*background: #ff6b6b;*/
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+}
+
+.product__content {
+    padding: 15px;
+    text-align: center;
+}
+
+.product__category {
+    font-size: 14px;
+    color: #888;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.product__title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.product__title:hover {
+    color: #cfed94;
+}
+
+.product__rating {
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+.product__price {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.new__price {
+    font-weight: bold;
+    color: #333;
+}
+
+.old__price {
+    text-decoration: line-through;
+    color: #888;
+    margin-left: 5px;
+}
+
+.cart__btn {
+    display: inline-block;
+    background: #865dad;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition:0.3s ease;
+    font-size: 16px;
+}
+
+.cart__btn:hover {
+    background: #c7b3cc;
+}
+
+.related-products h2 {
+    margin-bottom: 10px; /* Adjust this value as needed */
+}
+
+.related-products {
+    text-align: center; 
+    margin-bottom: 40px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+}
+
+.related-products__title {
+    margin-top: 50px;
+    color: #00695c;
+    font-weight: bold; 
+    font-size: 30px; 
+    margin-bottom: -120px;
+    
+}
+
+/*-----------technical information--------*/
+.technical-info {
+    margin-top: 20px;
+}
+
+.technical-info h3 {
+    margin-bottom: 10px;
+    text-align: left; /* Align heading to the left */
+}
+
+table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+}
+
+td {
+    padding: 8px; /* Add some padding to the table cells */
+    border: 1px solid #ccc; /* Light border for the cells */
+}
+
+td strong {
+    color: #333; /* Strong text color */
+}
+/*-----------extra information----*/
+.technical-info {
+    flex-grow: 1; 
+    flex-basis: 60%;
+    margin-right: 20px;
+}
+
+.technical-info h3 {
+    margin-bottom: 10px;
+    text-align: left; /* Align heading to the left */
+}
+
+table.info-table,
+table.additional-info-table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    margin-bottom: 20px; /* Space between the tables */
+    margin-right: -90px;
+}
+
+td {
+    padding: 8px; /* Add some padding to the table cells */
+    border: 1px solid #ccc; /* Light border for the cells */
+}
+
+td strong {
+    color: #333; /* Strong text color */
+}
+.text-dark {
+        text-decoration: none;
+}
+
+
+</style>
+</head>
+
+<body>
+    <!----navbar---->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="margin-left: 30px; margin-right: 30px; border-radius:15px; padding-top: 10px; padding-bottom: 10px;margin-top: 30px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">AgroLinker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">AgroLinker</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size:15px;">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html" style="margin-left: 350px;">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page.php">Career</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cartpage.html">Add to cart</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Section -->
+<section class="breadcrumb">
+    <ul class="breadcrumb__list flex container">
+        <li><a href="sugarcane.html" class="breadcrumb__link">Home</a></li>
+        <li><span class="breadcrumb__link">></span></li>
+        <li><span class="breadcrumb__link">Products</span></li>
+    </ul>
+</section>
+
+    <main class="container">
+        <div class="product-container">
+            <div class="product-images">
+                <img src="assests/sug-sug1.jpg" alt="Product Image" class="main-image">
+                <div class="thumbnail-images">
+                    <img src="assests/sug-sug2.jpg" alt="Thumbnail" class="thumbnail">
+                    <img src="assests/sug-sug3.jpg" alt="Thumbnail" class="thumbnail">
+                    <img src="assests/sug-sug4.jpg" alt="Thumbnail" class="thumbnail">
+                </div>
+
+                <!--technical details -->
+              <div class="technical-info" style="margin-top: 150px;">
+                <h3>Technical Information:</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><strong>Specialty:</strong></td>
+                            <td>Gluten Free, Whole Natural, Vegan</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Weight:</strong></td>
+                            <td>1 Kilograms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ingredient Type:</strong></td>
+                            <td>Organic</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Brand:</strong></td>
+                            <td>Generic</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Form:</strong></td>
+                            <td>Raw</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Item Model Number:</strong></td>
+                            <td>J3256</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net Quantity:</strong></td>
+                            <td>1000 gram</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Item Weight:</strong></td>
+                            <td>1 kg</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Country of Origin:</strong></td>
+                            <td>India</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Date of Manufacture:</strong></td>
+                            <td>7 july 2023</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+            </div>
+            <div class="product-details">
+                <h2>Organic Sugar</h2>
+                <p class="price">Price: ₹269.00 <span class="discount-card">(M.R.P.: ₹1,199.00 - 78% Off)</span></p>
+
+                <div class="ratings">
+                    <span class="rating">⭐⭐⭐⭐⭐</span>
+                    <span class="reviews-count">(25 Reviews)</span>
+                </div>
+
+                <p class="description">This natural sugar from sugarcane is sustainably sourced and minimally processed, making it a perfect sweetener for baking and beverages. Rich in natural flavor, it provides a healthier alternative to refined sugars. Additionally, its production supports sustainable agricultural practices, promoting eco-friendly farming.</p>
+
+                <div class="grade">AgroLinker Grade: A+</div><img src="assests/faasi.png" style="width: 9%;height: 3%; padding-left: 10px;"><strong>This is Vegetarian Food</strong><br>
+
+                <button class="order-button">Add to Cart</button>
+                <button class="order-button">Buy Now</button>
+
+                <div class="additional-info">
+                    <hr>
+                    <p>In Stock | Estimated Delivery: 3-5 days</p>
+                    <hr>
+                    <div class="offers">
+                        <h6 class="blink">Offers</h6>
+                             <div class="offer">
+                                <h4 class="offer-heading">Sugar discount</h4>
+                                    <p>Upto ₹1,500.00 discount on Cotton sub-products</p>
+                             </div>
+
+                             <div class="offer">
+                                     <h4 class="offer-heading">Special Offer</h4>
+                                     <p>Buy 2 Get 5% Off</p>
+                                     <p>Buy 4 Get 15% Off</p>
+                               </div>
+                </div>
+                <hr>
+                <div class="additional-info">
+                    <div class="info-row">
+                        <div class="info-item">
+                            <i class="bi bi-x-circle-fill"></i>
+                            <p>Non-Returnable</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-cash-coin"></i>
+                            <p>Pay on Delivery</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-box-seam"></i>
+                            <p>Amazon Delivered</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-truck"></i>
+                            <p>Free Delivery</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                        <!---extract inforamtion-->
+                          <div class="extra">     
+                                 <h5>Additional Information:</h5>
+                                    <table class="additional-info-table">
+                                        <tbody>
+                                             <tr>
+                                                 <td><strong>ASIN:</strong></td>
+                                                 <td>B0BZKZ96F8</td>
+                                             </tr>
+                                            <tr>
+                                                  <td><strong>Customer Reviews:</strong></td>
+                                                   <td>3.6 out of 5 stars (17 ratings)</td>
+                                            </tr>
+                                             <tr>
+                                                  <td><strong>Date First Available:</strong></td>
+                                                  <td>7 July 2022</td>
+                                             </tr>
+                                             <tr>
+                                                  <td><strong>Item Weight:</strong></td>
+                                                 <td>1 kg</td>
+                                            </tr>
+                                        </tbody>
+                                  </table>
+                             </div>
+                       </div>
+            </div>
+        </div>
+    </main>
+
+    <!---related products-->
+    <div class="related-products">
+        <h1 class="related-products__title" >RELATED PRODUCTS</h1>
+    <div class="product__container grid">
+        <!-- Product 2 -->
+        <div class="product__item">
+            <div class="product__banner">
+                <a href="#" class="product__images">
+                    <img src="assests/coco-vinegar.png" alt="Cotton Bag" class="product__img default"/>
+                    <img src="assests/coco-vinegar2.jpg" alt="Cotton Bag Hover" class="product__img hover"/>
+                </a>
+                <div class="product__actions">
+                    <a href="try1.html" class="action__btn" aria-label="Quick View">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                    <a href="#" class="action__btn" aria-label="Compare">
+                        <i class="fas fa-random"></i>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="product__content">
+                <span class="product__category">COCONUT VINEGAR</span>
+                <a href="#">
+                    <h3 class="product__title">Flavorful Dishes</h3>
+                </a>
+                <div class="product__rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="product__price flex">
+                    <span class="new__price">INR 600</span>
+                    <span class="old__price">INR 550</span>
+                </div>
+                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                    <i class="fa-solid fa-cart-shopping"> </i>Add to cart
+                </a>
+            </div>
+        </div>
+    
+        <!-- Product 3 -->
+        <div class="product__item">
+            <div class="product__banner">
+                <a href="#" class="product__images">
+                    <img src="assests/coco-water.png" alt="Recycled Bottle" class="product__img default"/>
+                    <img src="assests/coco-water2.jpg" alt="Recycled Bottle Hover" class="product__img hover"/>
+                </a>
+                <div class="product__actions">
+                    <a href="#" class="action__btn" aria-label="Quick View">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                    <a href="#" class="action__btn" aria-label="Compare">
+                        <i class="fas fa-random"></i>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="product__content">
+                <span class="product__category">COCONUT WATER</span>
+                <a href="#">
+                    <h3 class="product__title">Refreshing Coconut Water Beverage</h3>
+                </a>
+                <div class="product__rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="product__price flex">
+                    <span class="new__price">INR 500</span>
+                    <span class="old__price">INR 750</span>
+                </div>
+                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                    <i class="fa-solid fa-cart-shopping"> </i>Add to cart
+                </a>
+            </div>
+        </div>
+     <!---PRODUCT 4-->
+        <div class="product__item">
+            <div class="product__banner">
+                <a href="#" class="product__images">
+                    <img src="assests/coco-husk.jpg" alt="Recycled Bottle" class="product__img default"/>
+                    <img src="assests/coco-husk2.jpg" alt="Recycled Bottle Hover" class="product__img hover"/>
+                </a>
+                <div class="product__actions">
+                    <a href="#" class="action__btn" aria-label="Quick View">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                    <a href="#" class="action__btn" aria-label="Compare">
+                        <i class="fas fa-random"></i>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="product__content">
+                <span class="product__category">COCONUT HUSK</span>
+                <a href="#">
+                    <h3 class="product__title">Eco-Friendly Coconut Husk Products</h3>
+                </a>
+                <div class="product__rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="product__price flex">
+                    <span class="new__price">INR 400</span>
+                    <span class="old__price">INR 550</span>
+                </div>
+                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                    <i class="fa-solid fa-cart-shopping"> </i>Add to cart
+                </a>
+            </div>
+        </div>
+        <div class="product__item">
+            <div class="product__banner">
+                <a href="#" class="product__images">
+                    <img src="assests/coco-flour.png" alt="Recycled Bottle" class="product__img default"/>
+                    <img src="assests/coco-flour2.jpg" alt="Recycled Bottle Hover" class="product__img hover"/>
+                </a>
+                <div class="product__actions">
+                    <a href="#" class="action__btn" aria-label="Quick View">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                    <a href="#" class="action__btn" aria-label="Compare">
+                        <i class="fas fa-random"></i>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="product__content">
+                <span class="product__category">COCONUT FLOUR </span>
+                <a href="#">
+                    <h3 class="product__title">Gluten-Free</h3>
+                </a>
+                <div class="product__rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="product__price flex">
+                    <span class="new__price">INR 400</span>
+                    <span class="old__price">INR 850</span>
+                </div>
+                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                    <i class="fa-solid fa-cart-shopping"> </i>Add to cart
+                </a>
+            </div>
+        </div>
+    </div>
+    
+<!---footer-->
+<footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1; margin: 0; padding: 0;">
+    <section class="d-flex justify-content-between p-4 text-white" style="background-color: #21D192;">
+        
+      <div class="me-5">
+        <span class="text-dark">Get connected with us on social networks:</span>
+    </div>
+    <div>
+        <a href="" class="text-dark me-4">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+            <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+    
+    </section>
+    <section>
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
+                        <img src="assests/logo.jpeg" height="70" alt="" loading="lazy" />
+                    </div>
+                    <p class="text-center">AgroLinker</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <h6 class="text-uppercase fw-bold">Products</h6>
+                  <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                  <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li><a href="coconut.php" class="text-dark">COCONUT</a></li>
+                    <li><a href="cotton.php" class="text-dark">COTTON</a></li>
+                    <li><a href="paddy.php" class="text-dark">PADDY</a></li>
+                    <li><a href="palm.php" class="text-dark">PALM</a></li>
+                    <li><a href="sugarcane.php" class="text-dark">SUGARCANE</a></li>
+                  </ul>
+              </div>
+              
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold">Useful links</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                    <p><a href="index.html" class="text-dark">Home </a></p>
+                    <p><a href="about.html" class="text-dark">AboutUs</a></p>
+                    <p><a href="Products.html" class="text-dark">Products</a></p>
+                    <p><a href="page.php" class="text-dark">Career</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold">Contact</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                    <p><i class="fas fa-home mr-3"></i> Karur,TamilNadu</p>
+                    <p><i class="fas fa-envelope mr-3"></i> trioinnovators@gmail.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> +91 99 85 67 34 76 </p>
+                    <p><i class="fas fa-print mr-3"></i> +91 87 98 73 62 51 </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <div class="text-center p-3">
+    <p  style="margin-left: 900px; margin-top: 10px;">Designed by Trioinnovators</p>
+    </div>
+    
+  </footer>
+
+    <!---boostrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+</body>
+
+</html>

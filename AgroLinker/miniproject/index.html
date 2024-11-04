@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroLinker | Home</title>
+    <!--boostrap navigation connection-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap icons connection -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!---ajax-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="an">
+    <!---footer css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+.hero-section {
+margin-top: 100px; 
+padding-top: 50px;
+}
+.hero-title {
+font-weight: 300px; 
+width: 300px; 
+text-align: left;
+margin-left: 0; 
+margin-bottom: 180px;
+}
+.hero-image {
+max-width: 100%; 
+height: 100%;
+border-top-left-radius:100px;
+border-bottom-right-radius:100px ;
+border-bottom-left-radius:20px;
+border-top-right-radius:20px;
+}
+.hero-number-container {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-number {
+    color: green;
+    font-size: 35px;
+    font-weight: 500; 
+    margin-top: -150px;
+}
+
+.small-round-images {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 100px;
+    margin-top: -50px;
+    /*right: -60px; /* Adjust for desired positioning */
+    /*top: -10px;   /* Adjust to fine-tune */
+}
+
+.small-round-images img {
+    width: 60px;  /* Adjust size as needed */
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: -10px; /* Overlap effect */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.explore-btn {
+background-color: green;
+color: white;
+font-weight: bold;
+border-radius: 30px;
+padding: 10px 30px;
+display: inline-flex;
+align-items: center;
+text-decoration: none;
+margin-top: 40px;
+margin-left: -20px;
+}
+.explore-btn i {
+margin-left: 10px; 
+}
+.container2 {
+margin-top: 70px;
+padding-left: 20px; 
+}
+.container2 h1 {
+font-size: 30px;
+font-weight: bold;
+margin-left: 100px;
+}
+.container2 p {
+font-size: 18px;
+padding-top: 10px;
+}
+.images-left img {
+max-width: 80%;
+height: auto;
+border-radius: 20px;
+margin-bottom: 20px;
+margin-top: 70px;
+margin-left: 150px;
+}
+.container2 h5 {
+display: flex;
+align-items: center;
+padding-right: 30px;
+color: green; 
+margin-top: 20px;
+padding-top: 10px;
+}
+.container2 h5 i {
+margin-right: 10px;
+color: green; 
+margin-left: 100px;
+}
+.container2 p {
+margin-left: 100px; 
+}
+
+ /* footer*/
+ body{margin-top:20px;}
+.deneb_footer .widget_wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 200px;
+    padding-bottom: 70px;
+}
+@media (max-width: 767px) {
+    .deneb_footer .widget_wrapper .widget {
+        margin-bottom: 40px;
+    }
+}
+.deneb_footer .widget_wrapper .widget .widget_title {
+    margin-bottom: 30px;
+}
+.deneb_footer .widget_wrapper .widget .widget_title h4 {
+    font-weight: bold;
+}
+.deneb_footer .widget_wrapper .widget .widget_title h4:after {
+    content: "";
+    display: block;
+    max-width: 38px;
+    height: 2px;
+    margin-top: 5px;
+}
+.deneb_footer .widget_wrapper .widegt_about p {
+    margin-bottom: 20px;
+}
+.deneb_footer .widget_wrapper .widegt_about .social li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.deneb_footer .widget_wrapper .widegt_about .social li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #f9e6d4;
+    color: #fba543;
+    font-size: 14px;
+    -webkit-transition: all all 0.5s ease-out 0s;
+    -moz-transition: all all 0.5s ease-out 0s;
+    -ms-transition: all all 0.5s ease-out 0s;
+    -o-transition: all all 0.5s ease-out 0s;
+    transition: all all 0.5s ease-out 0s;
+}
+.deneb_footer .widget_wrapper .widegt_about .social li a:hover,
+.deneb_footer .widget_wrapper .widegt_about .social li a:focus {
+    background-image: -moz-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
+    background-image: -webkit-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
+    background-image: -ms-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
+    color: #fff;
+    box-shadow: 2.5px 4.33px 15px 0px rgba(254, 176, 0, 0.4);
+}
+.deneb_footer .widget_wrapper .widget_link ul li {
+    margin-bottom: 5px;
+}
+.deneb_footer .widget_wrapper .widget_link ul li a {
+    text-transform: capitalize;
+    color: #7a808d;
+}
+.deneb_footer .widget_wrapper .widget_link ul li a:hover,
+.deneb_footer .widget_wrapper .widget_link ul li a:focus {
+    color: #feb000;
+}
+.deneb_footer .widget_wrapper .widget_contact .contact_info .single_info {
+    max-width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.deneb_footer .widget_wrapper .widget_contact .contact_info .single_info .icon {
+    font-size: 12px;
+    color: #feb000;
+    margin-right: 10px;
+}
+.deneb_footer .widget_wrapper .widget_contact .contact_info .single_info .info p a {
+    color: #7a808d;
+}
+.deneb_footer .widget_wrapper .widget_contact .contact_info .single_info .info p span {
+    display: block;
+}
+
+.deneb_footer .copyright_area {
+    background: #edecf0;
+    padding: 10px 0;
+}
+.deneb_footer .copyright_area .copyright_text {
+    text-align: center;
+}
+.deneb_footer .copyright_area .copyright_text p {
+    color: #011a3e;
+}
+.deneb_footer .copyright_area .copyright_text p span {
+    color: #feb000;
+}
+.deneb_cta .cta_wrapper {
+    padding: 45px 50px 42px;
+    max-width: 970px;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: -135px;
+    position: relative;
+    background-image: -moz-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
+    background-image: -webkit-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
+    background-image: -ms-linear-gradient(0deg, #ffbd27 0%, #feb000 100%);
+    box-shadow: 2.5px 4.33px 15px 0px rgba(254, 176, 0, 0.4);
+    z-index: 1;
+}
+.deneb_cta .cta_wrapper:after {
+    content: "";
+    background-position: bottom;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.deneb_cta .cta_wrapper .cta_content h3 {
+    color: #fff;
+    font-weight: bold;
+}
+@media (max-width: 767px) {
+    .deneb_cta .cta_wrapper .cta_content h3 {
+        font-size: 24px;
+    }
+}
+.deneb_cta .cta_wrapper .cta_content h3:after {
+    content: "";
+    display: block;
+    max-width: 110px;
+    height: 2px;
+    margin-top: 13px;
+    margin-bottom: 24px;
+}
+.deneb_cta .cta_wrapper .cta_content p {
+    color: #fff;
+}
+.deneb_cta .cta_wrapper .button_box {
+    float: right;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .deneb_cta .cta_wrapper .button_box {
+        float: none;
+        text-align: left;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 767px) {
+    .deneb_cta .cta_wrapper .button_box {
+        float: none;
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+.deneb_cta .cta_wrapper .button_box .deneb_btn {
+    background: #fff;
+    color: #011a3e;
+}
+.deneb_cta .cta_wrapper .button_box .deneb_btn:hover,
+.deneb_cta .cta_wrapper .button_box .deneb_btn:focus {
+    box-shadow: 2.5px 4.33px 15px 0px rgba(0, 0, 0, 0.15);
+}
+.text-dark {
+        text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+
+    <!--Navigation ----->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="margin-top: 30px;margin-left: 30px;margin-right:30px; border-radius: 15px;padding-top: 10px;padding-bottom: 10px;">
+      <div class="container-fluid" >
+        <a class="navbar-brand" href="#">AgroLinker </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">AgroLinker</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size:15px;">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html" style="margin-left: 350px;">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Products.html">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="page.php">Career</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cartpage.html">Add to cart</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <!--- home-->
+    <div class="container hero-section">
+      <div class="row align-items-center">
+          <div class="col-md-6">
+              <h1 class="hero-title">Connecting the Farmers<br> with <br>Industries</h1>
+              <div class="hero-number">20+</div>
+              <div class="small-round-images">
+                <img src="assests/banana.jpg" alt="Small Image 1">
+                <img src="assests/coco-flour.png" alt="Small Image 2">
+                <img src="assests/coco-flour2.jpg" alt="Small Image 3">
+            </div>
+        
+              <p style="padding-top: 20px;">AgroLinker bridges the gap between local farmers and industrial buyers, promoting fair trade and supporting agricultural communities. Join us in transforming the agricultural landscape.</p>
+              <a href="#" class="explore-btn">
+                Explore<i class="bi bi-arrow-right"></i>
+              </a>
+          </div>
+          <div class="col-md-6 text-end">
+              <img src="assests/hand.jfif" alt="Agriculture Image" class="hero-image">
+          </div>
+      </div>
+    </div>
+
+     <!-- Home content -->
+     <div class="container mt-5">
+      <div class="row">
+          <div class="col-md-6 images-left">
+              <img src="assests/solns.jpeg" alt="Farmer Image 1">
+          </div>
+          <div class="col-md-6 container2">
+              <h1>Empower Your Agricultural Trade</h1>
+              <p>Discover how AgroLinker connects farmers with industries, facilitating the sale of agricultural products like coconut and paddy, and supporting agricultural communities.</p>
+              <h5><i class="bi bi-check-circle-fill"></i> Fair Trade</h5>
+              <p>Ensuring equitable deals for farmers and industries.</p>
+              <h5><i class="bi bi-graph-up-arrow"></i> Market Growth</h5>
+              <p>Expanding market reach for agricultural products.</p>
+              <h5><i class="bi bi-leaf-fill"></i> Sustainable Practices</h5>
+              <p>Promoting sustainable agricultural methods.</p>
+          </div>
+      </div>
+  </div>
+
+
+
+<!---footer-->
+<footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1; margin: 0; padding: 0;">
+    <section class="d-flex justify-content-between p-4 text-white" style="background-color: #21D192;">
+        
+      <div class="me-5">
+        <span class="text-dark">Get connected with us on social networks:</span>
+    </div>
+    <div>
+        <a href="" class="text-dark me-4">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+            <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-dark me-4">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+    
+    </section>
+    <section>
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
+                        <img src="assests/logo.jpeg" height="70" alt="" loading="lazy" />
+                    </div>
+                    <p class="text-center">AgroLinker</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <h6 class="text-uppercase fw-bold">Products</h6>
+                  <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                  <ul style="list-style-type: disc; padding-left: 20px;">
+                      <li><a href="coconut.php" class="text-dark">COCONUT</a></li>
+                      <li><a href="cotton.php" class="text-dark">COTTON</a></li>
+                      <li><a href="paddy.php" class="text-dark">PADDY</a></li>
+                      <li><a href="palm.php" class="text-dark">PALM</a></li>
+                      <li><a href="sugarcane.php" class="text-dark">SUGARCANE</a></li>
+                  </ul>
+              </div>
+              
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold">Useful links</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                    <p><a href="index.html" class="text-dark">Home </a></p>
+                    <p><a href="about.html" class="text-dark">AboutUs</a></p>
+                    <p><a href="Products.html" class="text-dark">Products</a></p>
+                    <p><a href="page.php" class="text-dark">Career</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold">Contact</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                    <p><i class="fas fa-home mr-3"></i> Karur,TamilNadu</p>
+                    <p><i class="fas fa-envelope mr-3"></i> trioinnovators@gmail.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> +91 99 85 67 34 76 </p>
+                    <p><i class="fas fa-print mr-3"></i> +91 87 98 73 62 51 </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <div class="text-center p-3">
+    <p  style="margin-left: 900px; margin-top: 10px;">Designed by Trioinnovators</p>
+    </div>
+    
+  </footer>
+  
+    <!---boostrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

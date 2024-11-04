@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Login Page</title>
+    <script>
+        function redirectToRegistration() {
+            window.location.href = "register.php";  // Replace 'register.html' with the actual file name or path to your registration page
+        }
+
+        function redirectTologin(){
+            window.location.href = "login.php";
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('farm.jpg'); /* Path to your background image */
+            background-size: cover; /* Ensures the image covers the entire area */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            height: 100vh; /* Makes the body full height of the viewport */
+            background-attachment: fixed;
+        }
+
+           h2 {
+            font-size: 28px; /* Increased font size for visibility */
+            margin-bottom: 15px; /* Space below the heading */
+            color: #388e3c; /* Dark green color for the text */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            font-family: 'Arial Black', sans-serif; /* Bold font style */
+            letter-spacing: 1px; /* Slightly increase spacing between letters */
+            text-align: center; /* Center align the heading */
+           }
+
+           .heading-container {
+              background: #DFFF00; /* Light background with some transparency */
+              border-radius: 20px; /* Rounded corners */
+              padding: 1px; /* Spacing inside the box */
+              box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+              margin-bottom: 10px; /* Space below the heading box */
+             }
+
+
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px; /* Space between image and login box */
+        }
+
+        .login-box {
+            text-align: center;
+            width: 400px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .link {
+            display: block;
+            margin-top: 10px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- Farmer cartoon image -->
+            <img src="file.png" alt="Farmer Cartoon"> <!-- Replace with actual image path -->
+            
+
+            <!-- Login box -->
+            <div class="login-box">
+                <div class="heading-container"> <!-- New div for the rectangle background -->
+                    <h2>Farmer Application</h2>
+                </div>
+                <p>To view your details,login from your account to continue</p>
+                <p>Already registered? click below</p>
+                <button class="btn" onclick="redirectTologin()">Login for Farmer</button>
+                <p>Or</p>
+                <button class="btn" onclick="redirectToRegistration()">Register as a farmer</button>
+                <p>Don't have an account? Click above</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function guestFarmer() {
+            alert("Guest Farmer option selected.");
+            // Redirect or open guest farmer options
+        }
+    </script>
+</body>
+</html>
